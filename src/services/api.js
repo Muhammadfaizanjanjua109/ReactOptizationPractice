@@ -1,3 +1,4 @@
+// src/services/api.js
 import axios from 'axios'
 import { API_BASE_URL } from '../utils/constants'
 
@@ -53,14 +54,23 @@ api.interceptors.response.use(
 
 export const apiService = {
   get: (url, config = {}) => api.get(url, config),
-  
   post: (url, data = {}, config = {}) => api.post(url, data, config),
-  
   put: (url, data = {}, config = {}) => api.put(url, data, config),
-  
   patch: (url, data = {}, config = {}) => api.patch(url, data, config),
-  
   delete: (url, config = {}) => api.delete(url, config),
+  
+  // Auth methods
+  login: (credentials) => api.post('/auth/login', credentials),
+  register: (userData) => api.post('/auth/register', userData),
+  
+  // User methods
+  getUsers: (params = {}) => api.get('/users', { params }),
+  getUser: (id) => api.get(`/users/${id}`),
+  createUser: (userData) => api.post('/users', userData),
+  updateUser: (id, userData) => api.put(`/users/${id}`, userData),
+  deleteUser: (id) => api.delete(`/users/${id}`),
+  getProfile: () => api.get('/users/profile'),
+  updateProfile: (profileData) => api.put('/users/profile', profileData),
 }
 
 export default api
