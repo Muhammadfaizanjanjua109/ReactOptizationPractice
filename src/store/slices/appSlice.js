@@ -1,5 +1,4 @@
 
-// src/store/slices/appSlice.js
 import { createSlice } from '@reduxjs/toolkit'
 
 const appSlice = createSlice({
