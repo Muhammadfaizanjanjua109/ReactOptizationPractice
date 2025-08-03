@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react'
 import { apiService } from '../services/api'
 import { setUser, getUser } from '../utils/auth'
-import Loading from '../components/Loading'
+import Loading from '../components/common/Loading'
 
 const Profile = () => {
   const [profile, setProfile] = useState(getUser() || {})

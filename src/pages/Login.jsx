@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { Navigate, useLocation } from 'react-router-dom'
 import { apiService } from '../services/api'
 import { setToken, setUser, isAuthenticated } from '../utils/auth'
-import Loading from '../components/Loading'
+import Loading from '../components/common/Loading'
 
 const Login = () => {
   const [formData, setFormData] = useState({

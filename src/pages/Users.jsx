@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react'
 import { apiService } from '../services/api'
-import Loading from '../components/Loading'
+import Loading from '../components/common/Loading'
 
 const Users = () => {
   const [users, setUsers] = useState([])
